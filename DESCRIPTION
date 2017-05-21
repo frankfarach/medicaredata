@@ -1,0 +1,14 @@
+Package: medicaredata
+Type: Package
+Title: Tools to Make Retrieving Medicare Data Easier
+Version: 0.1.0
+Authors@R: c(person("Frank", "Farach", role=c("aut", "cre"),
+                    email = "frank.farach@gmail.com"))
+Author: Frank Farach [aut, cre]
+Maintainer: Frank Farach <frank.farach@gmail.com>
+Depends: R (>= 3.3.3)
+Description: Facilitates finding and retrieving datasets from Medicare.gov
+    and loading them as R data frames.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
