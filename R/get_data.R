@@ -14,3 +14,12 @@ build_url <- function(dataset_id) {
 get_data <- function(dataset_id) {
   RSocrata::read.socrata(build_url(dataset_id))
 }
+
+#' Set the user's Socrata API token
+#'
+#' @param api_key character string represnting the user's Socrata API token.
+#'
+#' @export
+socrata_api_key <- function(api_key) {
+  Sys.setenv(SOCRATA_API_TOKEN = api_key)
+}
