@@ -10,16 +10,22 @@ build_url <- function(dataset_id) {
 #' Retrieve Medicare dataset
 #'
 #' @param dataset_id Socrata dataset identifier
+#' @param app_token Optional Socrata application token
 #' @return R data frame with dataset
-get_data <- function(dataset_id) {
-  RSocrata::read.socrata(build_url(dataset_id))
+get_data <- function(dataset_id, app_token = NULL) {
+  if (!is.null(app_token)) {
+    RSocrata::read.socrata(build_url(dataset_id), app_token)
+  } else {
+    RSocrata::read.socrata(build_url(dataset_id))
+  }
 }
 
 #' Set the user's Socrata API token
 #'
-#' @param api_key character string represnting the user's Socrata API token.
+#' @param api_key character string represnting the user's Socrata app token.
 #'
-#' @export
-socrata_api_key <- function(api_key) {
+#' @examples
+#' \dontrun{set_api_key("yourkey")}
+set_api_key <- function(api_key) {
   Sys.setenv(SOCRATA_API_TOKEN = api_key)
 }

@@ -4,10 +4,12 @@
 \alias{get_data}
 \title{Retrieve Medicare dataset}
 \usage{
-get_data(dataset_id)
+get_data(dataset_id, app_token = NULL)
 }
 \arguments{
 \item{dataset_id}{Socrata dataset identifier}
+
+\item{app_token}{Optional Socrata application token}
 }
 \value{
 R data frame with dataset
